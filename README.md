@@ -1,5 +1,5 @@
 # ict-install
-Scripts for installing IOTA ICT (current omegan version) on linux.
+Scripts for installing IOTA ICT (current omegan version) on Debian GNU/Linux on Android.
 
 
 ## BUILD install
