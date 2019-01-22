@@ -18,7 +18,10 @@ PKGMANAGER=apt-get
 	${PKGMANAGER} upgrade -y
   ${PKGMANAGER} install -y curl wget unzip nano gnupg2 screen oracle-java8-installer
 
-
+echo "### Setting time, preparing directories"
+date --set="$(curl -v --insecure --silent https://google.com/ 2>&1 | grep -i "^< date" | sed -e 's/^< date: //i')"
+mkdir -p ${ICTHOME}/${ICTDIR}
+cd ${ICTHOME}/${ICTDIR}
 
 if [ "$1" = "RELEASE" ]; then
 	cd ${ICTHOME}/${ICTDIR}
