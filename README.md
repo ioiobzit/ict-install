@@ -1,23 +1,9 @@
 # ict-install
 Scripts for installing IOTA ICT (current omegan version) on Debian GNU/Linux on Android.
 
-
-## BUILD install
-Run:
-
-`sudo ./install-ict.sh BUILD "<name> (ict-<number>)"`
-to build and run ict from the current src at github (including prereleases and snapshots).
-This also builds and runs Report.ixi and builds and installs (but does not run) chat.ixi.
-
-In order to start chat.ixi run: 
-`sudo systemctl start ict_chat-ixi`
-Username and password are configured in `/home/ict/config/chat.ixi.cfg`.
-
-The option "Nick (ict-0)" is needed by Report.ixi. If not provided the install script will ask for it at a later point.
-The naming convention is: `"<name> (ict-<number>)"`
-  where name is your nickname on discord
-  and number is the number of your ict. 
-
+This installation differs from https://github.com/phschaeff/ict-install by removing services scripts and options that are not usable with Debian GNU/Linux on Android.
+No BUILD
+NO Experimental
 
 ## RELEASE install
 Run:
@@ -38,27 +24,11 @@ It will:
 
 
 Tested on:
-* Ubuntu 18.04
-* Ubuntu 16.04 LTS
-* Kali (rolling)
-* Debian 9
-* Raspbian 9
-* OpenHabianPi
-* Amazon Linux release 2 (Karoo)
+* Debian GNU/Linux Userland for Android
 
 ## Troubleshooting Guide
 
 Some common errors encountered when starting ict.
-
-### Error starting Report.ixi
-If the ict_report-ixi-service starts with the following error:
-
-`INFO  [main/ReportIxi]   Can't connect to Ict 'ict'. Make sure that the Ict Client is running. Check 'ictName' in report.ixi.cfg and 'ixi_enabled=true' in ict.cfg.`
-
-the solution may be simply restarting the services, as in (as root):
-
-`systemctl stop ict_report-ixi.service ; systemctl restart ict ; sleep 1; systemctl start ict_report-ixi.service ;  journalctl -f _UID=$(id -u ict)`
-
 
 ### UnknownHostException
 
@@ -100,6 +70,3 @@ Make sure your outgoing traffic is using the same IP address your neighbours hav
 
 You can check your traffic by running
 `sudo tcpdump -vv -n -i any port 14265`
-
-
-
