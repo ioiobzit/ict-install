@@ -1,6 +1,6 @@
 #!/bin/sh
 
-ICTHOME="/home/ict"
+ICTHOME="/home/$(whoami)"
 ICTDIR="omega-ict"
 
 if [ "$(id -u)" != "0" ]; then
