@@ -14,12 +14,7 @@ nodename can be left blank.
 
 It will:
 * Install required dependencies (Oracle Java8 JDK) 
-* Add an user "ict"
-* Download and compile the omegas ICT code in /home/ict/omega-ict
-* Generate a run script
 * Import settings from old `ict.properties` (has to be located in `/home/ict/config/ict.properties`)
-* Generate a systemd service
-* Generate a cronjob restarting ICT every night
 * Start the ICT service
 
 
